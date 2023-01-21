@@ -32,7 +32,7 @@ For bond calculation, you'll be prompted to enter the present value of the house
 
 This calculator was created by Karabo Masalesa
 
-Repo
+## Repo
 
 https://github.com/Kaaribu/finance_calculator
 
