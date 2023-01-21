@@ -14,7 +14,7 @@ This is a simple command-line based finance calculator that allows you to calcul
 
 To use this calculator, you need to have python3 installed on your system. Once you have python3 installed, you can clone the repository by running the following command:
 
-git clone https://github.com/username/finance-calculator.git
+git clone https://github.com/username/finance_calculator.git
 
 ## Usage
 
