@@ -16,19 +16,25 @@ except ValueError as err:
 
 # If user inputs 'investment' as a choice then the ensuing inputs will be required from the user
 if bond_or_invest == 'investment':
-    amount_to_invest = float(input("\nEnter the amount you want to deposit:\n"))
-    interest_rate = float(input("\nEnter the interest rate you want:\n"))
-    years_to_invest = float(input("\nEnter the number of years you plan to invest for:\n"))
-    interest = input("\nEnter the type of interest you want. 'Simple' or 'Compound':\n").lower()
+        amount_to_invest = float(input("\nEnter the amount you want to deposit:\n"))
+        try:
+            interest_rate = float(input("\nEnter the interest rate you want:\n"))
+            if interest_rate < 0 or interest_rate > 100:
+                raise ValueError("Interest rate must be between 0 and 100")
+        except ValueError as err:
+            print("Please try again. {}".format(err))
 
-    # Calculate the interest for both 'simple' and 'compound' based on user input
-    if interest == 'simple':
-        final_amount_simple = amount_to_invest * (1 + (interest_rate/100) * years_to_invest)
-        print(f"\nYour investment based on simple interest will earn R {final_amount_simple}.")
+        years_to_invest = float(input("\nEnter the number of years you plan to invest for:\n"))
+        interest = input("\nEnter the type of interest you want. 'Simple' or 'Compound':\n").lower()
+
+        # Calculate the interest for both 'simple' and 'compound' based on user input
+        if interest == 'simple':
+            final_amount_simple = amount_to_invest * (1 + (interest_rate/100) * years_to_invest)
+            print(f"\nYour investment based on simple interest will earn R {final_amount_simple}.")
         
-    elif interest == 'compound':
-          final_amount_compound = amount_to_invest * math.pow(1 + (interest_rate/100),years_to_invest)
-          print(f"\nYour investment based on compound interest will earn R {final_amount_compound}.")
+        elif interest == 'compound':
+            final_amount_compound = amount_to_invest * math.pow(1 + (interest_rate/100),years_to_invest)
+            print(f"\nYour investment based on compound interest will earn R {final_amount_compound}.")
 
 # If user inputs 'bond' as a choice then the following code will execute
 if bond_or_invest == 'bond':
