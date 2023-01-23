@@ -17,13 +17,7 @@ except ValueError as err:
 # If user inputs 'investment' as a choice then the ensuing inputs will be required from the user
 if bond_or_invest == 'investment':
         amount_to_invest = float(input("\nEnter the amount you want to deposit:\n"))
-        try:
-            interest_rate = float(input("\nEnter the interest rate you want:\n"))
-            if interest_rate < 0 or interest_rate > 100:
-                raise ValueError("Interest rate must be between 0 and 100")
-        except ValueError as err:
-            print("Please try again. {}".format(err))
-
+        interest_rate = float(input("\nEnter the interest rate you want:\n"))
         years_to_invest = float(input("\nEnter the number of years you plan to invest for:\n"))
         interest = input("\nEnter the type of interest you want. 'Simple' or 'Compound':\n").lower()
 
